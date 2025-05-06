@@ -75,7 +75,7 @@ enum eKeyboardState eKeyboardRead(){
 
 void KeyboardInit(){
 
-   IO0DIR= IO0DIR & (~(S0_bm|S1_bm|S2_bm|S3_bm));
+   IO0DIR= IO0DIR & (~(S0_bm|S1_bm|S2_bm|S3_bm)); ////dlaczego tu jest negacja, a w LedInit nie bylo
 }
 
 void LedStep(enum eStepDirections eDirection){
