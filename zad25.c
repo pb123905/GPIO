@@ -1,8 +1,10 @@
 #include <LPC21xx.H> 
+
 #define LED0_bm 0x00010000 
 #define LED1_bm 0x00020000
 #define LED2_bm 0x00040000
 #define LED3_bm 0x00080000
+
 #define S0_bm 0x0000000010
 #define S1_bm 0x0000000040
 #define S2_bm 0x0000000020
@@ -14,17 +16,12 @@ enum eStepDirections {LEFT,RIGHT};
 void Delay(int iDelayInMS){
    int iLoopCounter;
    iDelayInMS=iDelayInMS*12000;
-   for(iLoopCounter=0; iLoopCounter< iDelayInMS; iLoopCounter++)
-    {
-}
+   for(iLoopCounter=0; iLoopCounter< iDelayInMS; iLoopCounter++) {}    
 }
 
 void LedInit()
 {
    IO1DIR = IO1DIR|(LED0_bm|LED1_bm|LED2_bm|LED3_bm);
-
-
-
    IO1CLR = LED0_bm|LED1_bm|LED2_bm|LED3_bm;
    IO1SET = LED0_bm;
 }
